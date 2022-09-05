@@ -1,1 +1,1 @@
-console.log('It is first test.');
+let func = require('../lib')

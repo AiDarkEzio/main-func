@@ -2,19 +2,17 @@
   "name": "@aidarkezio/main-func",
   "version": "1.2.0",
   "description": "📦 It has my funcs",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node lib/index.js"
   },
-  "files": [
-    "index.js"
-  ],
+  "files": [],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AiDarkEzio/main-func.git"
   },
   "keywords": [
-    "npm"
+    "funcs"
   ],
   "author": "AiDarkezio <subadraposhithapr@gmail.com> (https://aidarkezio.github.io)",
   "license": "MIT",
@@ -23,6 +21,7 @@
   },
   "homepage": "https://github.com/AiDarkEzio/main-func#readme",
   "directories": {
-    "test": "tests"
+    "test": "tests",
+    "lib": "lib"
   }
 }
