@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node lib/index.js"
   },
-  "files": [],
+  "files": [
+    "lib/**.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AiDarkEzio/main-func.git"
@@ -23,5 +25,8 @@
   "directories": {
     "test": "tests",
     "lib": "lib"
+  },
+  "dependencies": {
+    "steno": "^2.1.0"
   }
 }
