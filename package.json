@@ -2,12 +2,19 @@
   "name": "@aidarkezio/main-func",
   "version": "1.4.0",
   "description": "📦 It has my funcs",
+  "type": "module",
   "main": "lib/index.js",
   "scripts": {
     "start": "node lib/index.js"
   },
+  "exports": {
+    ".": {
+      "require": "./lib/index.js"
+    }
+  },
   "files": [
-    "lib/**.js"
+    "lib/**.js",
+    "lib/**/**.js"
   ],
   "repository": {
     "type": "git",

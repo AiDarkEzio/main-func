@@ -1,3 +1,3 @@
-let func = require('../lib')
+import { encode } from '../lib'
 
-console.log(func.encode.textEncode("Dark Ezio 1 !"))
+console.log(encode.textEncode("Dark Ezio 1 !"))
