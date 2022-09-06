@@ -2,9 +2,9 @@
   "name": "@aidarkezio/main-func",
   "version": "1.6.0",
   "description": "📦 It has my funcs",
-  "main": "lib/index.js",
+  "main": "./lib/cjs/index.js",
   "scripts": {
-    "start": "node lib/index.js"
+    "test": "node lib/cjs/index.js"
   },
   "exports": {
     ".": {
