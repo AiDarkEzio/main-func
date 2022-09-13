@@ -1,3 +1,5 @@
-node_modules/
-
 module_test/
+
+lib/
+
+node_modules/
