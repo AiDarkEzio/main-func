@@ -3,9 +3,6 @@ import { expect } from 'chai'
 import {
   toBase64,
   fromBase64ToString,
-  randomUUID,
-  randomBytes,
-  createHash
 } from './index.js'
 
 describe('Encryptions', () => {
@@ -36,38 +33,6 @@ describe('Encryptions', () => {
   })
 
   describe('Crypto', () => {
-    it('randomUUID', done => {
-      try {
-        const res = randomUUID()
-        expect(res).to.be.a('string')
-
-        return done()
-      } catch (e) {
-        return done(e)
-      }
-    })
-
-    it('randomBytes', done => {
-      try {
-        const res = randomBytes(16)
-        expect(res).to.be.a('string')
-
-        return done()
-      } catch (e) {
-        return done(e)
-      }
-    })
-
-    it('createHash', done => {
-      try {
-        const res = createHash('sha256', 'Hello world!!')
-        expect(res).to.be.a('string')
-        expect(res).to.have.length(64)
-
-        return done()
-      } catch (e) {
-        return done(e)
-      }
-    })
+    
   })
 })
