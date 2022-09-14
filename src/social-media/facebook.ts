@@ -1,6 +1,6 @@
 import cheerio from 'cheerio'
 import got from 'got'
-import { randomBytes } from '../encryptions/crypto.js'
+import { randomBytes } from 'crypto'
 import {
   ScraperError,
   decodeSnapApp,
@@ -47,7 +47,7 @@ export async function facebookdl (url: string): Promise<FacebookDownloader> {
     },
     searchParams: {
       video: url,
-      rand: randomBytes(13)
+      rand: JSON.stringify(randomBytes(13))
     }
   }).json()
   const result: FacebookDownloader['result'] = (a || [])
