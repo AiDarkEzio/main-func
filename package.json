@@ -1,6 +1,7 @@
 {
   "name": "@aidarkezio/main-func",
   "version": "2.0.8",
+  "type": "commonjs",
   "description": "📦 It has my funcs",
   "main": "./lib/cjs/index.js",
   "types": "./lib/@types/index.d.ts",
@@ -17,6 +18,9 @@
     "build:types": "tsc --p tsconfig.types.json",
     "lint:fix": "npx eslint src/** --fix --ignore-pattern src/*.json",
     "clean": "rimraf ./lib",
+    "tests:run:ts": "tsc tests/ts/index.ts && node tests/ts/index.js",
+    "tests:run:esm": "node tests/esm/index.js",
+    "tests:run:cjs": "node tests/cjs/index.js",
     "prepare": "node scripts/compile-typescript.js"
   },
   "exports": {
@@ -35,7 +39,6 @@
   "directories": {
     "lib": "lib",
     "test": "tests",
-    "src": "src",
     "scripts": "scripts"
   },
   "repository": {
@@ -52,17 +55,21 @@
   },
   "homepage": "https://github.com/AiDarkEzio/main-func#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "cheerio": "^1.0.0-rc.10",
     "crypto": "^1.0.1",
     "form-data": "^4.0.0",
     "got": "^11.8.3",
     "human-readable": "^0.2.1",
+    "jsdom": "^20.0.0",
+    "node-fetch": "^3.2.10",
     "similarity": "^1.2.1",
     "steno": "^2.1.0",
     "zod": "^3.17.3"
   },
   "devDependencies": {
     "@types/chai": "^4.3.0",
+    "@types/jsdom": "^20.0.0",
     "@types/mocha": "^9.1.0",
     "@types/node": "^18.7.17",
     "@types/ws": "^8.2.2",
