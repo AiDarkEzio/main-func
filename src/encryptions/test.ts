@@ -3,6 +3,8 @@ import { expect } from 'chai'
 import {
   toBase64,
   fromBase64ToString,
+  // eBinary,
+  // dBinary
 } from './index.js'
 
 describe('Encryptions', () => {
@@ -31,6 +33,16 @@ describe('Encryptions', () => {
       }
     })
   })
+
+  // describe('Binary', () => {
+  //   it('Frome string to binary', done => {
+  //     try {
+  //       const res = eBinary()
+  //     } catch (e) {
+        
+  //     }
+  //   })
+  // })
 
   describe('Crypto', () => {
     

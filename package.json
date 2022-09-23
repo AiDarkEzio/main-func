@@ -39,6 +39,7 @@
   "directories": {
     "lib": "lib",
     "test": "tests",
+    "src": "src",
     "scripts": "scripts"
   },
   "repository": {

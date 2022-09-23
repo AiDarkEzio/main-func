@@ -5,7 +5,7 @@ export declare function WikiPedia({ query }: {
     thumb: string;
     title: string;
 }>;
-export declare function WikiMedia({ title }: {
+export declare function WikiMedia({ title: query }: {
     title: string;
 }): Promise<{
     title: string | undefined;
