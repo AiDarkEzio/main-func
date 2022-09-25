@@ -11,21 +11,28 @@ var nonLocalhostDomainRE = /^[^\s\.]+\.\S{2,}$/;
  * @return {Boolean}
  */
 export function isUrl(string: string): boolean {
-  if (typeof string !== 'string') { return false }
+  if (typeof string !== "string") {
+    return false;
+  }
 
   var match = string.match(protocolAndDomainRE);
-  if (!match) { return false }
+  if (!match) {
+    return false;
+  }
 
   var everythingAfterProtocol = match[1];
-  if (!everythingAfterProtocol) { return false }
+  if (!everythingAfterProtocol) {
+    return false;
+  }
 
-  if (localhostDomainRE.test(everythingAfterProtocol) || nonLocalhostDomainRE.test(everythingAfterProtocol)) {
+  if (
+    localhostDomainRE.test(everythingAfterProtocol) ||
+    nonLocalhostDomainRE.test(everythingAfterProtocol)
+  ) {
     return true;
   }
   return false;
 }
-
-
 
 /**
  *
@@ -33,10 +40,12 @@ export function isUrl(string: string): boolean {
  * @return {Boolean}
  */
 export function isString(data: any): boolean {
-  if (typeof data == "string") { return true }
-  else { return false;}
+  if (typeof data == "string") {
+    return true;
+  } else {
+    return false;
+  }
 }
-
 
 /**
  *
@@ -51,13 +60,28 @@ export function isObject(data: any): boolean {
   }
 }
 
-
 /**
  *
  * @param {Any} data
  * @return {Boolean}
  */
 export function isNumber(data: any): boolean {
-  if (typeof data == "number") { return true }
-  else { return false;}
+  if (typeof data == "number") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+/**
+ *
+ * @param {Any} data
+ * @return {Boolean}
+ */
+export function isBoolean(data: any): boolean {
+  if (typeof data == "boolean") {
+    return true;
+  } else {
+    return false;
+  }
 }

@@ -13,9 +13,9 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
 
-export function styletext({ teks }: { teks: string; }): Promise<{ name: string; result: string }[]> {
+export function styletext(text: string): Promise<{ name: string; result: string }[]> {
   return new Promise((resolve, reject) => {
-    axios.get("http://qaz.wtf/u/convert.cgi?text=" + teks).then(({ data }) => {
+    axios.get(`http://qaz.wtf/u/convert.cgi?text=${encodeURI(text)}`).then(({ data }) => {
       let $ = cheerio.load(data);
       let ezio: { name: string; result: string }[] = [];
       $("table > tbody > tr").each(function (a, b) {

@@ -13,17 +13,21 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
 
-export async function mediafireDl(url: string): Promise<{ name: string | undefined; mime: string | undefined; size: string; link: string | undefined; }> {
-  const res = await axios.get(url);
-  const $ = cheerio.load(res.data);
-  const link = $("a#downloadButton").attr("href");
-  const size = $("a#downloadButton")
-    .text().replace("Download", "")
-    .replace("(", "").replace(")", "")
-    .replace("\n", "").replace("\n", "")
-    .replace("                         ", "");
-  const seplit = link?.split("/");
-  const name = seplit?.[5];
-  let mime = name?.split(".")[1];
-  return ({ name, mime, size, link });
+export function wpsearch(query: string): Promise<string[]> {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(`https://www.wallpaperflare.com/search?wallpaper=${encodeURI(query)}`)
+      .then(async ({data}) => {
+        const $ = cheerio.load(data);
+        let outPut: string[] = [];
+        $("#gallery > li > figure> a").each(function (i, cuk) {
+          let text = $(cuk).find('img').attr('data-src')
+          if (typeof text == 'string') {
+            outPut.push(text);
+          } 
+        });
+        resolve(outPut);
+      })
+      .catch(e => reject(e));
+  });
 }

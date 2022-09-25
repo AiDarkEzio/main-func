@@ -13,8 +13,8 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
 
-export async function WikiPedia({ query }: { query: string; }): Promise<{ wiki: string; thumb: string; title: string; }> {
-  const res = await axios.get(`https://en.m.wikipedia.org/w/index.php?search=${query}`);
+export async function WikiPedia(Title: string): Promise<{ wiki: string; thumb: string; title: string; }> {
+  const res = await axios.get(`https://en.m.wikipedia.org/w/index.php?search=${encodeURI(Title)}`);
   const $ = cheerio.load(res.data);
   let wiki: string = $("#mf-section-0").find("p").text();
   let thumb: string | undefined = $("#mf-section-0")
@@ -22,14 +22,14 @@ export async function WikiPedia({ query }: { query: string; }): Promise<{ wiki: 
     .attr("src");
   thumb = thumb ? thumb : "//pngimg.com/uploads/wikipedia/wikipedia_PNG35.png";
   thumb = "https:" + thumb;
-  let title: string = $("h1#section_0").text() || query;
+  let title: string = $("h1#section_0").text() || Title;
   return { wiki, thumb, title };
 }
 
-export async function WikiMedia({ title: query }: { title: string; }): Promise<{ title: string | undefined; source:string | undefined; image: string | undefined;}[]> {
+export async function WikiMedia(Title: string): Promise<{ title: string | undefined; source:string | undefined; image: string | undefined;}[]> {
   return new Promise((resolve, reject) => {
     axios
-      .get( `https://commons.wikimedia.org/w/index.php?search=${query}&title=Special:MediaSearch&go=Go&type=image` )
+      .get( `https://commons.wikimedia.org/w/index.php?search=${encodeURI(Title)}&title=Special:MediaSearch&go=Go&type=image` )
       .then((res) => {
         let $ = cheerio.load(res.data);
         let ezio: { title: string | undefined; source:string | undefined; image: string | undefined;}[] = [];
