@@ -1,6 +1,4 @@
-export declare function styletext({ teks }: {
-    teks: string;
-}): Promise<{
+export declare function styletext(text: string): Promise<{
     name: string;
     result: string;
 }[]>;

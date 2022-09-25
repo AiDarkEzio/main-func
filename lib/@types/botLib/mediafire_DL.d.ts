@@ -1,6 +1,4 @@
-export declare function mediafireDl({ url }: {
-    url: string;
-}): Promise<{
+export declare function mediafireDl(url: string): Promise<{
     name: string | undefined;
     mime: string | undefined;
     size: string;

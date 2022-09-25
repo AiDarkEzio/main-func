@@ -23,4 +23,10 @@ export declare function isObject(data: any): boolean;
  * @return {Boolean}
  */
 export declare function isNumber(data: any): boolean;
+/**
+ *
+ * @param {Any} data
+ * @return {Boolean}
+ */
+export declare function isBoolean(data: any): boolean;
 //# sourceMappingURL=isUrl.d.ts.map

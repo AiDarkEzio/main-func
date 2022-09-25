@@ -1,13 +1,9 @@
-export declare function WikiPedia({ query }: {
-    query: string;
-}): Promise<{
+export declare function WikiPedia(Title: string): Promise<{
     wiki: string;
     thumb: string;
     title: string;
 }>;
-export declare function WikiMedia({ title: query }: {
-    title: string;
-}): Promise<{
+export declare function WikiMedia(Title: string): Promise<{
     title: string | undefined;
     source: string | undefined;
     image: string | undefined;

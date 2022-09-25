@@ -2,4 +2,6 @@ export * from './mediafire_DL.js';
 export * from './wiki_SC.js';
 export * from './styleText.js';
 export * from './isUrl.js';
+export * from './apk.js';
+export * from './wallpaper.js';
 //# sourceMappingURL=index.d.ts.map
