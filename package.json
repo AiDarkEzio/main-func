@@ -1,6 +1,6 @@
 {
   "name": "@aidarkezio/main-func",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "type": "commonjs",
   "description": "📦 It has my funcs",
   "main": "./lib/cjs/index.js",
